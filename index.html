@@ -6,20 +6,6 @@
   <title>SOFA Interactive</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<script>
-  const panels = document.querySelectorAll('.panel');
-
-  function checkVisibility() {
-    panels.forEach(panel => {
-      const rect = panel.getBoundingClientRect();
-      const visible = rect.top < window.innerHeight && rect.bottom > 0;
-      panel.classList.toggle('visible', visible);
-    });
-  }
-
-  window.addEventListener('scroll', checkVisibility);
-  window.addEventListener('load', checkVisibility);
-</script>
 <body>
   <section class="panel" id="about">
     <div class="content">
