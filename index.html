@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOFA Interactive</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+  const panels = document.querySelectorAll('.panel');
+
+  function checkVisibility() {
+    panels.forEach(panel => {
+      const rect = panel.getBoundingClientRect();
+      const visible = rect.top < window.innerHeight && rect.bottom > 0;
+      panel.classList.toggle('visible', visible);
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('load', checkVisibility);
+</script>
 <body>
-<table style="font-family: Arial, sans-serif; font-size: 14px;">
-  <tr>
-    <td style="padding-right: 10px;">
-      <img src="https://imgur.com/a/fRe5HvM" alt="BCX Studio Logo" width="60" height="60" style="border-radius: 8px;" />
-    </td>
-    <td>
-      <strong>Mehmed Özen</strong><br/>
-      Developer<br/>
-      <strong>BCX Studio</strong><br/>
-      📧 <a href="mailto:bookclubexperimental@gmail.com">bookclubexperimental@gmail.com</a><br/>
-      📍 ODTÜ Teknokent, Ankara
-    </td>
-  </tr>
-</table>
+  <section class="panel" id="about">
+    <div class="content">
+      <h1>About Us</h1>
+      <p>We are SOFA Interactive, a studio blending comfort and chaos to create unforgettable indie game experiences.</p>
+    </div>
+  </section>
+
+  <section class="panel" id="games">
+    <div class="content">
+      <h1>Our Games: Still Space</h1>
+      <p>Still Space is a dark, atmospheric horror adventure where the void is never empty...</p>
+    </div>
+  </section>
 </body>
 </html>
